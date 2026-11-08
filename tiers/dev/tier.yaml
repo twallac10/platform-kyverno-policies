@@ -2,7 +2,9 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: __APP__
-  namespace: __APP__
+  name: kyverno-policies
+  namespace: kyverno-policies
 spec:
-  values: {}
+  values:
+    # Audit -> validationActions [Audit]; Enforce -> validationActions [Deny].
+    validationFailureAction: Audit
