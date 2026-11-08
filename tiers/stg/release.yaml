@@ -9,7 +9,7 @@ metadata:
     platform.twallac10.io/chart-version: "3.9.2"
 spec:
   ref:
-    digest: "sha256:0000000000000000000000000000000000000000000000000000000000000000" # set by `task charts:seed` / mirror.yaml
+    digest: "sha256:ee9be63d4c00ec4192c8cee65a8072443707e7bf08fd75e72bb11eac1efd75bb" # set by `task charts:seed` / mirror.yaml
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
@@ -19,7 +19,7 @@ metadata:
 spec:
   values:
     # The policy SET is promotable: same policies, same exclusions in every tier.
-    policyType: ValidatingPolicy      # CEL policies.kyverno.io (chart default, pinned explicitly)
+    policyType: ValidatingPolicy # CEL policies.kyverno.io (chart default, pinned explicitly)
     podSecurityStandard: baseline
     failurePolicy: Fail
     validationAllowExistingViolations: true
